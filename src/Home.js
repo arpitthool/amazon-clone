@@ -37,35 +37,28 @@ function Home() {
                     rating={4}
                 />
                 <Product
-                    id='574637'
-                    title='The lean startup'
-                    price={29.99}
-                    image='https://m.media-amazon.com/images/I/41Ag4WE7uyL._AC_UY218_.jpg'
-                    rating={5}
+                    id='5746459'
+                    title='ASICS Men Gel-Cumulus 23 Running Shoes'
+                    price={99.99}
+                    image='https://m.media-amazon.com/images/I/61l8NUUmmBL._AC_SY110_.jpg'
+                    rating={4}
                 />
                 <Product
-                    id='574637'
-                    title='The lean startup'
-                    price={29.99}
-                    image='https://m.media-amazon.com/images/I/41Ag4WE7uyL._AC_UY218_.jpg'
-                    rating={5}
+                    id='974637'
+                    title='Ninja C38000 Foodi NeverStick Premium 8-Piece Cookware Set with Glass Lids, Hard-Anodized, Nonstick, Durable & Oven Safe to 500°F, Slate Grey'
+                    price={269}
+                    image='https://m.media-amazon.com/images/I/81ygRfRLjUL._AC_SY110_.jpg'
+                    rating={3}
                 />
 
             </div>
 
             <div className='home__row'>
                 <Product
-                    id='574637'
-                    title='The lean startup'
-                    price={29.99}
-                    image='https://m.media-amazon.com/images/I/41Ag4WE7uyL._AC_UY218_.jpg'
-                    rating={5}
-                />
-                <Product
-                    id='574637'
-                    title='The lean startup'
-                    price={29.99}
-                    image='https://m.media-amazon.com/images/I/41Ag4WE7uyL._AC_UY218_.jpg'
+                    id='454637'
+                    title='SAMSUNG CH890 Series 34-Inch Ultrawide QHD (3440x1440) Computer Monitor, 100Hz, Curved,'
+                    price={589}
+                    image='https://m.media-amazon.com/images/I/71qkzkC7bHL._AC_UY218_.jpg'
                     rating={5}
                 />
 
