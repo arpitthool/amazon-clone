@@ -6,7 +6,11 @@ function Product() {
     <div className='product'>
         <div className='product__info'>
             
-            <p>The lean startup
+            <p>
+                The lean startup
+            </p>
+
+            <p className='product__price'>
                 <small>$</small>
                 <small>19.99</small>
             </p>
