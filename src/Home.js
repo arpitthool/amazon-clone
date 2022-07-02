@@ -11,22 +11,63 @@ function Home() {
                 alt=""/>
         
             <div className='home__row'>
-                <Product/>
-                <Product/>
+                <Product
+                    id='574637'
+                    title='The lean startup'
+                    price={29.99}
+                    image='https://m.media-amazon.com/images/I/41Ag4WE7uyL._AC_UY218_.jpg'
+                    rating={5}
+                />
+                <Product
+                    id='574546'
+                    title='HP DeskJet 2755e Wireless Color All-in-One Printer with bonus 6 months Instant Ink with HP+ (26K67A)'
+                    price={84.89}
+                    image='https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SX425_.jpg'
+                    rating={4}
+                />
 
             </div>
 
             <div className='home__row'>
-                <Product/>
-                <Product/>
-                <Product/>
+                <Product
+                    id='434637'
+                    title='UGREEN Tablet Pillow Stand for Lap Soft Tablet Stand Holder Bed with 3 Viewing Angles Adjustable Pillow Holder Compatible with iPad Pro 9.7, 10.5, 11, 12.9 Air Mini 5 4 3 2 E-Reader Grey'
+                    price={23.99}
+                    image='https://m.media-amazon.com/images/I/71Bs2Ed3q6L._AC_SY110_.jpg'
+                    rating={4}
+                />
+                <Product
+                    id='574637'
+                    title='The lean startup'
+                    price={29.99}
+                    image='https://m.media-amazon.com/images/I/41Ag4WE7uyL._AC_UY218_.jpg'
+                    rating={5}
+                />
+                <Product
+                    id='574637'
+                    title='The lean startup'
+                    price={29.99}
+                    image='https://m.media-amazon.com/images/I/41Ag4WE7uyL._AC_UY218_.jpg'
+                    rating={5}
+                />
 
             </div>
 
             <div className='home__row'>
-                <Product/>
-                <Product/>
-                <Product/>
+                <Product
+                    id='574637'
+                    title='The lean startup'
+                    price={29.99}
+                    image='https://m.media-amazon.com/images/I/41Ag4WE7uyL._AC_UY218_.jpg'
+                    rating={5}
+                />
+                <Product
+                    id='574637'
+                    title='The lean startup'
+                    price={29.99}
+                    image='https://m.media-amazon.com/images/I/41Ag4WE7uyL._AC_UY218_.jpg'
+                    rating={5}
+                />
 
             </div>
         </div>
