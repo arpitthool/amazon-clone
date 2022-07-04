@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Login.css'
+import { auth } from './firebase';
 
 function Login() {
 
@@ -18,7 +19,13 @@ function Login() {
         // to prevent from refreshing
         e.preventDefault()
 
-        // TODO : firebase register
+        // firebase register
+        auth.createUserWithEmailAndPassword(email, password)
+            .then((auth) => {
+                 // registered successfully
+                 console.log(auth);
+            })
+            .catch(error => alert(error.message))
     }
 
     return (
