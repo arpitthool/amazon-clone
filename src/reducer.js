@@ -20,7 +20,7 @@ const reducer = (state, action) => {
 
         case "REMOVE_FROM_BASKET":
             // get the index of the first item that matches passed id and remove it.
-            
+
             const index = state.basket.findIndex(
                 (basketIten) => basketIten.id == action.id
             );
