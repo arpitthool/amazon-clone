@@ -2,7 +2,12 @@ import React from 'react'
 import './Product.css'
 
 function Product({ id, title, image, price, rating }) {
-  return (
+  
+    const addToBasket = () => {
+        // dispatch the item to data layer
+    }
+  
+    return (
     <div className='product'>
         <div className='product__info'>
             
@@ -26,7 +31,7 @@ function Product({ id, title, image, price, rating }) {
         <img src={image}
         alt=''/>
             
-        <button>
+        <button onClick={addToBasket}>
             Add to Basket
         </button>
     </div>
