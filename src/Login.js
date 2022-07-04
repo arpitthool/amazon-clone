@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import './Login.css'
 import { auth } from './firebase';
 
 function Login() {
 
+    const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -12,7 +13,13 @@ function Login() {
         // to prevent from refreshing
         e.preventDefault()
 
-        // TODO : firebase login
+        auth
+            .signInWithEmailAndPassword(email, password)
+            .then(auth => {
+                history.push('/')
+            })
+            .catch(error => alert(error.message))
+
     }
 
     const register = e => {
@@ -20,10 +27,14 @@ function Login() {
         e.preventDefault()
 
         // firebase register
-        auth.createUserWithEmailAndPassword(email, password)
+        auth
+            .createUserWithEmailAndPassword(email, password)
             .then((auth) => {
                  // registered successfully
-                 console.log(auth);
+                console.log(auth);
+                if(auth) {
+                    history.push('/')
+                }
             })
             .catch(error => alert(error.message))
     }
