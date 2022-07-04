@@ -1,7 +1,5 @@
 import React from 'react'
 import './Header.css'
-import SearchIcon from '@mui/icons-material/Search';
-import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { Link } from 'react-router-dom';
 import { useStateValue } from './StateProvider'
 
@@ -24,7 +22,7 @@ function Header() {
                     type='text'
                 ></input>
 
-                <SearchIcon className='header__searchIcon'/>
+                <img src='search.png' className='header__searchIcon'/>
 
             </div>
 
@@ -60,7 +58,7 @@ function Header() {
 
                 <Link to='/checkout'>
                     <div className='header__optionBasket'>
-                        <ShoppingBasketIcon />
+                        <img src='shopping-cart.png' className='header__shoppingCartIcon'/>
 
                         <spam className='header__optionLineTwo header__basketCount'>
                             {basket?.length}
