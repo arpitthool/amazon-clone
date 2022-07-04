@@ -15,7 +15,7 @@ function Checkout() {
             
                 <div>
                     <h3>
-                        Hello, {user?.email}
+                        Hello, {user ? user.email : 'Guest'}
                     </h3>
                     <h2 className='checkout__title'>
                         Your shopping basket
