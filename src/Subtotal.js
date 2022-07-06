@@ -2,9 +2,11 @@ import React from 'react'
 import './Subtotal.css'
 import { useStateValue } from './StateProvider';
 import { getBasketTotal } from './reducer';
+import { useHistory } from 'react-router-dom';
 
 function Subtotal() {
     
+    const history = useHistory();
     const [{basket}, dispatch] = useStateValue();
 
     return (
@@ -18,7 +20,9 @@ function Subtotal() {
                 <input type='checkbox'/> This order contains a gift
             </small>
 
-            <button>
+            {/* we are using history.push() to prgrammatically take the user to the next page
+            , we also could have used the Link to do this */}
+            <button onClick={e => history.push('/payment')}>
                 Proceed to checkout
             </button>
 
