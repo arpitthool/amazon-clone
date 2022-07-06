@@ -12,6 +12,7 @@ import {
 import Login from './Login';
 import { auth } from './firebase';
 import { useStateValue } from './StateProvider';
+import Payment from './Payment';
 
 function App() {
 
@@ -57,6 +58,11 @@ function App() {
 
         <Route exact path="/login">
           <Login />
+        </Route>
+
+        <Route exact path="/payment">
+          <Header />
+          <Payment />
         </Route>
       </Switch>
     </div>
