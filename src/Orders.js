@@ -6,6 +6,7 @@ import Order from './Order';
 
 function Orders() {
 
+    
     const [orders, setOrders] = useState([]);
 
     const [{ basket, user}, dispatch] = useStateValue();
@@ -26,7 +27,7 @@ function Orders() {
         } else {
             setOrders([])
         }
-        
+
     }, [user])
 
     return (
@@ -36,9 +37,9 @@ function Orders() {
             </h1>
 
             <div className='orders__order'>
-                {orders?.map( order => {
+                {orders?.map( order => (
                     <Order order={order}/>
-                })}
+                ))}
             </div>
         </div>
     )
