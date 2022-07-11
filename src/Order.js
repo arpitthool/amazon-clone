@@ -38,9 +38,11 @@ function Order({order}) {
                             )
                         )}
 
-            <h3 className='order__total'>
-                    ({order.data.basket.length} items): ${order.data.amount / 100}
-            </h3>
+            <p className='order__total'>
+                <small>
+                    Order Total: ${order.data.amount / 100}
+                </small>
+            </p>
         </div>
     )
 }
