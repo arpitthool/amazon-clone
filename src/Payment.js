@@ -6,6 +6,7 @@ import { useStateValue } from './StateProvider'
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 import { getBasketTotal } from './reducer';
 import axios from './axios';
+import { db } from './firebase';
 
 function Payment() {
 
@@ -55,6 +56,17 @@ function Payment() {
             }
         }).then(({ paymentIntent }) => {
             // payment confirmed
+
+            // no sql data structure
+            db.collection('users') // fetch users db
+                .doc(user?.uid)      // get the user
+                .collection('orders')   // fetch the orders for that user
+                .doc(paymentIntent.id)  // create a document with the id
+                .set({
+                    basket: basket,
+                    amount: paymentIntent.amount,
+                    created: paymentIntent.created
+                })
             
             setSucceeded(true)
             setError(null)
