@@ -1,12 +1,15 @@
-import React, {useState} from 'react'
-import { Link } from 'react-router-dom';
+import React, {useEffect, useState} from 'react'
+import { Link,  useHistory } from 'react-router-dom';
 import CheckoutProduct from './CheckoutProduct';
 import './Payment.css'
 import { useStateValue } from './StateProvider'
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 import { getBasketTotal } from './reducer';
+import axios from 'axios';
 
 function Payment() {
+
+    const history = useHistory();
 
     const [{basket, user}, dispatch] = useStateValue();
 
@@ -20,7 +23,47 @@ function Payment() {
     const [processing, setProcessing] = useState("");
     const [succeeded, setSucceeded] = useState(false);
 
-    const handleSubmit = e => {
+    // clientSecret is like a key that is given by client which allows to process payments
+    const [clientSecret, setClientSecret] = useState(true);
+
+    // whenever the basket changes we get a new secret
+    useEffect(() => {
+        // generate a special stripe secret which allows us to charge a customer
+        const getClientSecret = async () => {
+            // axios is way of making a request
+            const response = await axios({
+                method : 'post',
+                // Stripe expects the total in a currencies subunits hence, *100
+                url : `/payments/create?total=${getBasketTotal(basket)*100}`
+            });
+            setClientSecret(response.data.clientSecret)
+        }
+
+        getClientSecret();
+    }, [basket])
+
+    const handleSubmit = async (event) => {
+        // using stripe
+        event.preventDefault();
+
+        // this will allow to click the buy button only once
+        setProcessing(true);
+
+        const payload = await stripe.confirmCardPayment(clientSecret, {
+            payment_method : {
+                card : elements.getElement(CardElement)
+            }
+        }).then(({ paymentIntent }) => {
+            // payment confirmed
+            
+            setSucceeded(true)
+            setError(null)
+            setProcessing(false)
+
+            // we use replace() instead of push() because if user hits back button 
+            // then we don't want them to come back to payment page
+            history.replace('/orders')
+        })
 
     }
 
