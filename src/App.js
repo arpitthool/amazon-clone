@@ -15,8 +15,9 @@ import { useStateValue } from './StateProvider';
 import Payment from './Payment';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
+import Orders from './Orders';
 
-const promise = loadStripe('MY_Secret_API_Key');
+// const promise = loadStripe('MY_Secret_API_Key');
 
 function App() {
 
@@ -69,6 +70,11 @@ function App() {
           <Elements stripe={promise} >
             <Payment />
           </Elements>
+        </Route>
+
+        <Route exact path="/orders">
+          <Header />
+          <Orders />
         </Route>
       </Switch>
     </div>

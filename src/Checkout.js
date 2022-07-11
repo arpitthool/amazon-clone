@@ -11,7 +11,7 @@ function Checkout() {
     return (
         <div className='checkout'>
             <div className='checkout__left'>
-                <img className='checkout__ad' src='https://m.media-amazon.com/images/I/71zXsuikWhL._SX3000_.jpg'/>
+                <img className='checkout__ad' src='ad.png'/>
             
                 <div>
                     <h3>

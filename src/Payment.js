@@ -42,8 +42,6 @@ function Payment() {
         getClientSecret();
     }, [basket])
 
-    console.log("the secret is >>",clientSecret)
-
     const handleSubmit = async (event) => {
         // using stripe
         event.preventDefault();
@@ -61,6 +59,11 @@ function Payment() {
             setSucceeded(true)
             setError(null)
             setProcessing(false)
+
+            // empty basket
+            dispatch({
+                type: 'EMPTY_BASKET'
+            })
 
             // we use replace() instead of push() because if user hits back button 
             // then we don't want them to come back to payment page
