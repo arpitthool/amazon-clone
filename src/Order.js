@@ -25,10 +25,6 @@ function Order({order}) {
                 </small>
             </p>
 
-            <h3 className='order__total'>
-                    ({order.data.basket.length} items): ${order.data.amount / 100}
-            </h3>
-
             {order.data.basket?.map(
                             item => (
                                 <CheckoutProduct
@@ -37,9 +33,14 @@ function Order({order}) {
                                     image={item.image}
                                     price={item.price}
                                     rating={item.rating}
+                                    hideRemoveButton
                                 />
                             )
                         )}
+
+            <h3 className='order__total'>
+                    ({order.data.basket.length} items): ${order.data.amount / 100}
+            </h3>
         </div>
     )
 }
